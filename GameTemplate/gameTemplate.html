@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Template</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="default.css">
+</head>
+<body class="body1">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top navpos">
+    <a href="gameTemplate.html" class="navbar-brand d-flex px-5 d-inline text-nowrap"><i class="fas fa-dice-d20"></i>&#160 Game Template</a>
+        <button class="navbar-toggler sagayasla" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>         
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a href="#" class=" nav-link active mx-1 text-nowrap">Ana Sayfa</a>
+      </li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Katogoriler
+      </a>
+      <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item text-white"href="#">Aksiyon</a></li>
+        <li><a class="dropdown-item text-white" href="#">Macera</a></li>
+        <li><a class="dropdown-item text-white" href="#">Strateji</a></li>
+        <li><a class="dropdown-item text-white" href="#">Spor</a></li>
+        <li><a class="dropdown-item text-white" href="#">Savaş</a></li>
+        <li><a class="dropdown-item text-white" href="#">Simülasyon</a></li>
+        <li><a class="dropdown-item text-white" href="#">Yarış</a></li>
+        <li><a class="dropdown-item text-white" href="#">Online Oyunlar</a></li>
+        <li><a class="dropdown-item text-white" href="#">Korku</a></li>
+        <li><a class="dropdown-item text-white" href="#">Dövüş</a></li>
+      </ul>
+    </li>
+      <li class="nav-item ">
+        <a href="gameTemplateHakkında.html" class="nav-link mx-1">Hakkında</a>
+      </li>
+      <li class="nav-item ">
+        <a href="gameTemplateKayıt.html" class="nav-link mx-auto mx-1">Kaydol</a>
+      </li>
+      <li class="nav-item ">
+        <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" class="nav-link mx-1 text-nowrap ">Oturum Aç</a>
+      </li>
+  </ul>
+</div>
+</div>
+</nav>
+    <div class="jumbotron mb-2 pt-4 card1">
+            <h1  class="text-white text-center banner-text"><i class="fas fa-dice-d20"></i>&#160 Game Template</h1>
+            <hr>
+        </div>
+    <div id="carouselExampleCaptions" class="carousel slide slider-w mx-auto banner-img" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner" >
+          <div class="carousel-item active">
+            <img src="../Fotoğraflar/slider1.jpg" class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Deep Rock Galactic</h5>
+              <a href="#" class="btn btn-dark btn-lg mt-2">Yeni Eklendi !</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../Fotoğraflar/slider2.jpg" class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-light">Wolfenstein II: The New Colossus</h5>
+              <a href="#" class="btn btn-dark btn-lg mt-2">Yeni Eklendi !</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../Fotoğraflar/slider3.png" class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Cyberpunk 2077</h5>
+              <a href="#" class="btn btn-dark btn-lg mt-2">Yeni Eklendi !</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../Fotoğraflar/slider4.jpg"  class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-light">The Witcher 3: Wild Hunt</h5>
+              <a href="gameTemplateoyun.html" class="btn btn-dark btn-lg mt-2">Yeni Eklendi !</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../Fotoğraflar/slider5.png" class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-light">Doom (2016)</h5>
+              <a href="#" class="btn btn-dark btn-lg mt-2">Yeni Eklendi !</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <main class="ana-sayfa mx-auto " id="about">  
+        <div class="container mt-2 ">
+            <div class="row">
+                <div class="col-md-8 about-img" >
+                        <img src="../Fotoğraflar/cardwitcher.jpg"  class="img-thumbnail card-img-top"  alt="Witcher 3">
+                        <div class="card1 solcol  mb-4">
+                        <div class="card-body about-text">
+                            <h4 class="card-title">The Witcher 3: Wild Hunt</h4>
+                            <p class="card-text">Açılış sahnesi, Yennefer'ın büyük bir savaşın ortasında, bilinmeyen bir tehlikeden kaçışıyla başlıyor ve birkaç gün sonrasında
+                              Geralt ve Vesemir'in, Yennefer'ın bıraktığı izleri takip ettiğini görüyoruz. Sahnenin sonunda asıl maceramız, Mavi Dağlar'da 
+                            Witcher'ların kalesi olan Kaer Morhen'deki bir odada başlıyor.</p>
+                            <a href="gameTemplateoyun.html" class="btn btn-secondary">Daha Fazlası...</a>
+                        </div>
+                        <div class="card-footer text-muted">Yüklenme tarihi 17.12.2021</div>
+                    </div>
+                    <img src="../Fotoğraflar/carddrg.jpg" class="img-thumbnail card-img-top"  alt="Deep Rock Galactic">
+                        <div class="card1 solcol  mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Deep Rock Galactic</h4>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ullam voluptatem 
+                            explicabo earum sunt molestias voluptate facere, ipsam provident aspernatur omnis mollitia ducimus 
+                            quidem laudantium.</p>
+                            <button class="btn btn-secondary">Daha Fazlası...</button>
+                        </div>
+                        <div class="card-footer text-muted">Yüklenme tarihi 17.12.2021</div>
+                    </div>
+                    <div class="card1 solcol mb-4">
+                        <img src="../Fotoğraflar/carddoom.jpg" class="img-thumbnail card-img-top"  alt="Doom">
+                        <div class="card-body">
+                            <h4 class="card-title">Doom (2016)</h4>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ullam voluptatem 
+                            explicabo earum sunt molestias voluptate facere, ipsam provident aspernatur omnis mollitia ducimus 
+                            quidem laudantium.</p>
+                            <button class="btn btn-secondary">Daha Fazlası...</button>
+                        </div>
+                        <div class="card-footer text-muted">Yüklenme tarihi 17.12.2021</div>
+                    </div>
+                    <div class="card1 solcol mb-4">
+                        <img src="../Fotoğraflar/cardcyberpunk.png" class="img-thumbnail card-img-top"  alt="Cyberpunk 2077">
+                        <div class="card-body">
+                            <h4 class="card-title">Cyberpunk 2077</h4>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ullam voluptatem 
+                            explicabo earum sunt molestias voluptate facere, ipsam provident aspernatur omnis mollitia ducimus 
+                            quidem laudantium.</p>
+                            <button class="btn btn-secondary">Daha Fazlası...</button>
+                        </div>
+                        <div class="card-footer text-muted">Yüklenme tarihi 17.12.2021</div>
+                    </div>
+                    <div class="card1 solcol mb-4">
+                        <img src="../Fotoğraflar/cardwtnc.jpg" class="img-thumbnail card-img-top"  alt="Wolfenstein">
+                        <div class="card-body">
+                            <h4 class="card-title">Wolfenstein II: The New Colossus</h4>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ullam voluptatem 
+                            explicabo earum sunt molestias voluptate facere, ipsam provident aspernatur omnis mollitia ducimus 
+                            quidem laudantium.</p>
+                            <button class="btn btn-secondary">Daha Fazlası...</button>
+                        </div>
+                        <div class="card-footer text-muted">Yüklenme tarihi 17.12.2021 <br><br>  
+                          <div class="btn-group">
+                          <button class="btn btn-outline-danger disabled"> << </button>
+                          <button class="btn btn-outline-danger active">1</button>
+                          <button class="btn btn-outline-danger">2</button>
+                          <button class="btn btn-outline-danger">3</button>
+                          <button class="btn btn-outline-danger"> >> </button>
+                       </div>
+                  </div></div>
+                        
+                    </div>
+
+                <div class="col-md-4">
+                    <div id="katogori" class="card1 sagcol">
+                        <div class="card-header">
+                            <h5>Arama</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input type="text" placeholder="Arama..." class="form-control bg-dark text-white"><span class="input-group-btn"><button
+                                 type="button" class="btn btn-secondary"><i class="fas fa-search"></i>
+                                </button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card1 sagcol my-2">
+                        <div class="card-header"><h5>Katogoriler</h5></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-unstyled">
+                                        <li><a class="text-white" title="Aksiyon" href="#">Aksiyon</a></li>
+                                        <li><a class="text-white" title="Macera" href="#">Macera</a></li>
+                                        <li><a class="text-white" title="Strateji" href="#">Strateji</a></li>
+                                        <li><a class="text-white" title="Spor" href="#">Spor</a></li>
+                                        <li><a class="text-white" title="Savaş" href="#">Savaş</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <ul class="list-unstyled">
+                                        <li><a class="text-white" title="Simülasyon" href="#">Simülasyon</a></li>
+                                        <li><a class="text-white" title="Yarış" href="#">Yarış</a></li>
+                                        <li><a class="text-white" title="Online Oyunlar" href="#">Online Oyunlar</a></li>
+                                        <li><a class="text-white" title="Korku" href="#">Korku</a></li>
+                                        <li><a class="text-white" title="Dövüş" href="#">Dövüş</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card1 sagcol">
+                        <div class="card-header"><h5>Popüler Oyunlar</h5></div>
+                        <div class="card-body">
+                            <img src="../Fotoğraflar/newcoldwar.png" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Call of Duty: Black Ops Cold War</h6>
+                            <a class="text-white new" title="Call of Duty: Black Ops Cold War" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newdyinglight.jpg" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Dying Light 2 Stay Human</h6>
+                            <a class="text-white new" title="Dying Light 2 Stay Human" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newgog.jpg" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Marvel's Guardians of the Galaxy</p></h6>
+                            <a class="text-white new" title="Marvel's Guardians of the Galaxy" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newjc4.png" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Just Cause 4</h6>
+                            <a class="text-white new" title="Just Cause 4" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newgta5.jpg" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Grand Theft Auto V</h6>
+                            <a class="text-white new" title="Grand Theft Auto V" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newmgs5.jpg" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Metal Gear Solid V: The Phantom Pain</h6>
+                            <a class="text-white new" title="Metal Gear Solid V: The Phantom Pain" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newbf1.jpg" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Battlefield 1</h6>
+                            <a class="text-white new" title="Battlefield 1" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newcsgo.png" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Counter-Strike: Global Offensive</h6>
+                            <a class="text-white new" title="Simülasyon" href="#">Sayfaya git</a><hr>
+                            <img src="../Fotoğraflar/newvalo.jpg" class="img-thumbnail card-img-bottom" alt=""><br><br>
+                            <h6>Valorant</h6>
+                            <a class="text-white new" title="Valorant" href="#">Sayfaya git</a><hr>
+                            <div class="btn-group" id="foot">
+                                <button class="btn btn-outline-danger disabled"> << </button>
+                                <button class="btn btn-outline-danger"> >> </button>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="mymodal-content text-white">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giriş Yap</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="K_adi" class="col-form-label">Kullanıcı Adı</label>
+                        <input type="text" class="form-control bg-dark text-white" id="K_adi">
+                      </div>
+                      <div class="mb-3">
+                        <label for="sifre" class="col-form-label">Şifre</label>
+                        <input type="password" class="form-control bg-dark text-white" id="sifre"></input>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-outline-danger">Giriş Yap</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+      </main>
+      <footer  class="foot py-5 mt-2 text-white text-center">
+     <div class="container">   
+      <div class="cards-wrapper">
+      <div class="cards">
+        <i class="fas fa-building icon"></i>
+        <h4 class="cards-text">Sample</h4>
+      </div>
+      <div class="cards">
+        <i class="fas fa-book icon"></i>
+        <h4 class="cards-text">Sample</h4>
+      </div>
+      <div class="cards">
+        <i class="fas fa-car-alt icon"></i>
+        <h4 class="cards-text">Sample</h4>
+      </div>
+    </div></div>
+        Copyright © Game Template 2021
+      </footer>
+    <script src="https://kit.fontawesome.com/3798988652.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+    integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA=="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
+    integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA=="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+    integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+    crossorigin="anonymous"
+  ></script>
+  <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>-->
+</body>
+</html>

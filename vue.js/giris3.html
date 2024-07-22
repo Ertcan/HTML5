@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .black{
+            background-color: black;
+        }
+        .aqua{
+            background-color: aqua;
+        }
+        .green{
+            background-color: green;
+        }
+        #effect{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .highligth{
+            background-color: crimson;
+            width: 200px !important;
+        }
+        .shrink{
+            background-color: darkred;
+            width: 50px !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div @click = "deger = !deger" :class="{aqua : deger}" class="box"></div>
+        <div @click = "deger = !deger" :class="divd" class="box"></div>
+        <div @click = "deger = !deger" :class="{black : deger}" class="box" ></div>
+    
+        <hr>
+        <p>Renk değiştir!!!</p>
+        <input type="text" v-model="color"><hr>
+        <p>Boyut Değiştir</p>
+        <hr>
+        <label for="">Genişlik</label>
+        <input type="text" v-model="width">
+        <label for="">Uzunluk</label>
+        <input type="text" v-model="heigth"><hr>
+        <div class="box" :style="bgg"></div>
+    </div>
+    <hr>
+    <div id="exersice">
+        <div>
+            <button @click="startEffect">Efekti Başlat!</button>
+            <div id="effect" :class="{shrink : s ,highligth : !s}"></div>
+        </div>
+        <div>Henüz bir clasım yok</div>
+        <div>
+            <input type="text">
+            <div></div>
+        </div>
+    </div>
+    <script>
+        new Vue ({
+            el : "#app",
+            data : {
+                deger : false,
+                color : "aqua",
+                bg : "background-color: ",
+                width : "100",
+                heigth: "100"
+            },
+            computed : {
+                divd : function(){
+                    return {
+                        green : this.deger,
+                        black : !this.deger
+                    }
+            },
+            bgg : function(){
+                return (this.bg + this.color + "; " + "width: "+this.width+"px; "+"height: "+this.heigth+"px;");
+            }
+            }
+        });
+        new Vue ({
+            el : "#exersice",
+            data : {
+                s : false
+            },
+            methods : {
+                startEffect : function(){
+                    vm = this;
+                    setInterval(function(){
+                        vm.s=!vm.s;
+                    },1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

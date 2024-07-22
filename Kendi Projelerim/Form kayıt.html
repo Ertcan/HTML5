@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<form action="" onsubmit="return validate()" method="POST">
+    <table style="border: 1px solid;" >
+        <tr>
+            <th>Ad-Soyad</th>
+            <th><input type="text" name="adsoyad" id="adsoyad"></th>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <th><input type="email" id="email"></th>
+        </tr>
+        <tr>
+            <th>Şifre</th>
+            <th><input type="password" name="sifre" id="sifre"></th>
+        </tr>
+        <tr>
+            <th>Şifre Tekrar</th>
+            <th><input type="password" name="sifre2" id="sifre2"></th>
+        </tr>
+        <tr>
+            <th>Posta Kodu</th>
+            <th><input type="text" id="posta"></th>
+        </tr>
+        <tr>
+            <th>Şehir</th>
+            <th><select name="" id="sehir">
+            <option value="">Afyon</option>
+            <option value="">Ankara</option>
+            <option value="">Denizli</option>
+        </select></th>
+        </tr>
+        <tr>
+            <th><button type="submit" onsubmit="return validate()">Kayıt ol</button></th>
+        </tr>
+    </table>
+    <button type="button" id="ekleme" onclick="ekleme()">Satır ekle</button>
+    <button type="button" id="silme" onclick="silme()">Satır sil</button>
+</form>
+    <script>
+        function validate(){
+            let ad = document.getElementById('adsoyad');
+            let em = document.getElementById('email');
+            let pw = document.getElementById('sifre');
+            let pw2 = document.getElementById('sifre2');
+            let pk = document.getElementById('posta');
+            let s = document.getElementById('sehir');
+
+            if(ad.value==""){
+                alert("Ad soyad alanı boş geçilemez!");
+                return false;
+            }
+            if(em.value==""){
+                alert("Email alanı boş geçilemez!");
+                return false;
+            }
+            if((pw.value=="")&&(pw2.value=="")){
+                alert("Şifre alanları boş bırakılamaz!");
+                if(pw.value<5){
+                alert("5 karakterden kısa şifre girilemez!");
+                return false;
+                if(pw.value!=pw2.value){
+                alert("Girilen şifreler farklı veya boş!");
+            }
+            }
+        }
+        if(pk.value!=5){
+            alert("Posta kodu 5 haneli olmalıdır!");
+        }
+            
+        }
+        function ekleme(){
+        let tr = document.createElement("tr");
+        var node = document.createTextNode("Satır 1");
+        tr=appendChild(node);
+        tr.style.backgroundColor='green';
+        let th = document.createElement("th");
+        var node2 = document.createTextNode("Satır 2");
+        th=appendChild(node);
+        th.style.backgroundColor='green';
+        }
+        function silme(){
+
+        }
+    </script>
+</body>
+</html>

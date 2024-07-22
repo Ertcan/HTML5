@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="exercise">
+        <div>
+            <button v-on:click="showAlert">Alert Göster</button>
+        </div>
+        <div>
+            <input type="text" v-on:input = "change">
+            <p>{‌{ value }}</p>
+        </div>
+        <div>
+            <input type="text" v-on:keydown.enter="updateValue">
+            <p>{‌{ value }}</p>
+        </div>
+        <div>
+            <input type="text" v-model="name">
+            <p> {{ name }} </p>
+        </div>
+        <div>
+            <p>Şuanki Değer : {{ deger }}</p>
+            <button @click="deger+=5">5 Arttır</button>
+            <button @click="deger++">1 Arttır</button>
+            <p>{{ result }}</p>
+        </div>
+        <div>
+            <input type="text" v-model ="timeout">
+            <p>{{ result }}</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        new Vue({
+        el: '#exercise',
+        data: {
+            value: null,
+            name : "",
+            deger : 0,
+            timeout : 2000
+        },
+		methods : {
+			showAlert: function(){
+				alert();
+			},
+			updateValue : function(event){
+				this.value = event.target.value;
+			},
+            change:function(e){
+            this.description=e.target.value
+        }
+		},
+        computed : {
+            result : function(){
+                return this.deger == 33 ? "değer 33 oldu!!" : "Malesef 33 Değil"
+            }
+        },
+        watch : {
+            result : function(value){
+                vm =this;
+                setTimeout(function(){
+                    vm.deger=0;
+                },this.timeout)
+            }
+        }
+});
+    </script>
+</body>
+</html>

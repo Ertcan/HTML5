@@ -1,0 +1,110 @@
+.html,
+.body2 {
+  position: relative;
+  height: 100%;
+}
+
+.body2 {
+  background: #1f2229;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.carda25 {
+  position: relative;
+  height: calc(100% - 30px);
+  width: calc(33.333% - 30px);
+  background: #fff;
+  overflow: hidden;
+  float: left;
+  margin: 15px;
+}
+.card__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  top: calc(100% - 80px);
+  left: 0;
+  opacity: 1;
+  transition: all 0.75s ease-in-out;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+.card__content-inner {
+  position: relative;
+  display: block;
+  height: 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.75s ease-in-out;
+}
+.card__content:after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px 0 0 2px;
+  content: "";
+}
+.card__title {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.card__description {
+  color: #eee;
+}
+.carda25:after {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: "";
+}
+.carda25.a100, .carda25:hover {
+  cursor: pointer;
+}
+.carda25.a100 .card__content, .carda25:hover .card__content {
+  top: 0;
+  background: #000;
+  transition: all 1s ease-in-out;
+}
+.carda25.a100 .card__content-inner, .carda25:hover .card__content-inner {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+.carda25.a50 .card__content {
+  top: 50%;
+}
+.carda25.a50 .card__content-inner {
+  height: 50%;
+}
+.carda25.a50:hover .card__content {
+  top: 0;
+}
+.carda25.a50:hover .card__content-inner {
+  height: 100%;
+}
+.carda25.a100:hover .card__content {
+  top: calc(100% - 80px);
+}
+.carda25.a100:hover .card__content-inner {
+  height: 80px;
+}

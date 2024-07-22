@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Infinite Card Slider JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="sar">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="slide">
+        <div class="kart">
+          <div data-tilt data-tilt-scale="1.1" class="imgg "><img src="images/yemek5.png" alt="img" draggable="false"></div>
+        </div>
+        <div class="kart">
+          <div data-tilt data-tilt-scale="1.1" class="imgg "><img src="images/yemek1.png" alt="img" draggable="false"></div>
+        </div>
+        <div class="kart">
+          <div data-tilt data-tilt-scale="1.1" class="imgg "><img src="images/yemek2.png" alt="img" draggable="false"></div>
+        </div>
+        <div class="kart">
+          <div data-tilt data-tilt-scale="1.1" class="imgg"><img src="images/yemek3.png" alt="img" draggable="false"></div>
+        </div>
+        <div class="kart">
+          <div data-tilt data-tilt-scale="1.1" class="imgg "><img src="images/yemek4.png" alt="img" draggable="false"></div>
+        </div>
+        <div class="kart">
+          <div data-tilt data-tilt-scale="1.1" class="imgg "><img src="images/yemek5.png" alt="img" draggable="false"></div>
+        </div>
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".kart"), {
+            max: 30,
+            speed: 400
+        });</script>
+  </body>
+</html>

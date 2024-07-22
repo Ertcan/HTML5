@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{border: 2px groove black; margin-bottom: 10px;}
+        .Lime{
+            background-color: lightgreen;
+        }
+        #ekle{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+    <table id="ekle-sil">
+        <tr>
+            <th>Ad soyad</th>
+            <th><input type="text"></th>
+        </tr>
+        <tr>
+            <th>e-mail</th>
+            <th><input type="email"></th>
+        </tr>
+        <tr><th>Şifre</th>
+            <th><input id="sifre" type="password"></th>
+        </tr>
+        <tr>
+            <th>Şifre Tekrar</th>
+            <th><input type="password"></th>
+        </tr>
+        <tr>
+            <th>Posta Kodu</th>
+            <th><input type="text"></th>
+        </tr>
+        <tr>
+            <th>Şehir</th>
+            <th><select name="" id="" >
+                <option value="">Afyon</option>
+                <option value="">İstanbul</option>
+                <option value="">Ankara</option>
+            </select>
+            </th>
+        </tr>
+        <tr>
+            <th> </th>
+            <th><button type="submit">Kayıt ol</button></th>
+        </tr>
+    </table>
+    <button type="button" id="Ekle">Satır Ekle</button>
+    <button type="button" id="Sil">Satır Sil</button>
+    </form>
+    <script>
+        var sayac =0;
+        const val = document.querySelector('#Ekle');
+        val.addEventListener('click',Ekle);
+        function Ekle(){
+            ++sayac;
+            const ekletr = document.createElement('tr');
+            ekletr.className='Lime';
+            const ekleth = document.createElement('th');
+            const ekleth2 = document.createElement('th');
+            const text = document.createTextNode(`Sütun ${sayac} `);
+            const text2 = document.createTextNode(`Sütun ${sayac+1}`);
+            ekleth2.appendChild(text2);
+            ekleth.appendChild(text);
+            ekletr.appendChild(ekleth);
+            ekletr.appendChild(ekleth2);
+            const table = document.querySelector('#ekle-sil');
+            table.appendChild(ekletr);
+        }
+        const val2 = document.querySelector('#Sil');
+        val2.addEventListener('click',Sil);
+        function Sil (){
+            let val = document.querySelector('#ekle-sil');
+            val.lastElementChild.remove();
+        }
+    </script>
+</body>
+</html>

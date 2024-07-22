@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 10px;
+            width: 45%;
+            border-radius: 5px;
+            font-size: 15px;
+            border: 1px gray solid;
+        }
+        .form-group{
+            margin: 10px;
+        }
+        label{
+            display: block;
+        }
+        #wrapper{
+            width: 800px;
+            margin: 0 auto;
+        }
+        button{
+            background-color: white;
+            color: rgb(43, 1, 1);
+            border-radius: 5px;
+            border: 2px rgb(43, 1, 1) solid;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(43, 1, 1);
+            color: white;
+        }
+        .error{
+            color: red;
+            text-align: left;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        
+<div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" placeholder="Epostanızı giriniz">
+    <div id="errorEmail" class="error"></div>
+</div>
+<div class="form-group">
+    <label for="phone">Telefon</label>
+    <input type="tel" id="phone" name="phone" placeholder="Telefon no">
+    <div id="errorPhone" class="error"></div>
+</div>
+<div class="form-group">
+    <label for="name">Ad</label>
+    <input type="text" id="name" name="name" placeholder="İsminizi giriniz">
+    <div id="errorName" class="error"></div>
+</div>
+<div class="form-group">
+    <label for="password">Şifre</label>
+    <input type="password" id="password" name="password" placeholder="Şifrenizi giriniz">
+    <div id="errorPassword" class="error"></div>
+</div>
+<div class="form-group">
+    <label for="password2">Şifre tekrar</label>
+    <input type="password" id="password2" name="password2" placeholder="Şifrenizi tekrar giriniz">
+    <div id="errorPassword2" class="error"></div>
+</div>
+<button type="button" id="btn">Kaydet</button>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            function isEmail(email){
+                var pattern =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+                return pattern.test(email);
+            }
+           
+            $('#btn').click(function(){
+                var error='';
+                $('.error').html("");
+                if($('#email').val()==''){
+                    error='<p>* email alanı boş geçilemez!</p>';
+                    $('#errorEmail').html(error);
+                    $('#errorEmail').slideDown();
+                }else if(isEmail($('#email').val())==false){
+                    error='<p>* email alanı düzgün girilmedi !</p>';
+                    $('#errorEmail').html(error);
+                    $('#errorEmail').slideDown();
+                }
+                if($('#phone').val()==''){
+                    error='<p>* telefon alanı boş geçilemez!</p>';
+                    $('#errorPhone').html(error);
+                    $('#errorPhone').slideDown();
+                }
+                else if($.isNumeric($('#phone').val())==false){
+                    error='<p>* telefon alanında harf olmaz !</p>';
+                    $('#errorPhone').html(error);
+                    $('#errorPhone').slideDown();
+                }
+                else if($('#phone').val().length!=11){
+                    error='<p>* telefon alanı 11 haneden oluşur !</p>';
+                    $('#errorPhone').html(error);
+                    $('#errorPhone').slideDown();
+                }
+                if($('#name').val()==''){
+                    error='<p>* isim alanı boş geçilemez!</p>';
+                    $('#errorName').html(error);
+                    $('#errorName').slideDown();
+                }
+                if($('#password').val()==''){
+                    error='<p>* şifre alanı boş geçilemez!</p>';
+                    $('#errorPassword').html(error);
+                    $('#errorPassword').slideDown();
+                }
+                else if($('#password').val().length<=5){
+                    error='<p>* Şifre 5 den az olamaz !</p>';
+                    $('#errorPassword').html(error);
+                    $('#errorPassword').slideDown();
+                }
+                if($('#password').val()!=$('#password2').val()){
+                    error='<p>* Şifreler Aynı Değil !</p>';
+                    $('#errorPassword2').html(error);
+                    $('#errorPassword2').slideDown();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

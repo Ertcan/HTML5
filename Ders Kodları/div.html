@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p{
+            background-color: red;
+        }
+        div > p {
+            background-color: yellow;
+        }
+            div ~ p {
+            background-color: blue;
+        }
+        div + p {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Paragraf 1</p>
+        <p>Paragraf 2</p>
+         <span><p>Paragraf 3 </p></span> 
+    </div>
+
+    <p>Paragraf 4</p>
+    <p>Paragraf 5</p>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../Fotoğraflar/indir.png" alt="" width="400px" id="bulb">
+    <div id="on" style="padding-top: 100px; padding-bottom: 100px; width: 200px;background-color: aqua; text-align: center;">Tıklayın</div>
+    <div id="bigbox" style="height: 200px; width: 200px; background-color: brown; position: relative;"> 
+    <div id="box" style="height: 50px; width: 50px; background-color: beige; position: absolute;"> </div></div>
+    <script>
+        const img = document.querySelector('#bulb');
+        img.addEventListener('click',function(){
+            if(img.getAttribute('src')=='../Fotoğraflar/indir.png'){
+            img.setAttribute('src','../Fotoğraflar/images.png');
+            }
+            else{
+                img.setAttribute('src','../Fotoğraflar/indir.png');
+            }
+        });
+        const div = document.querySelector('#on');
+        div.addEventListener('mousedown',function(e){
+            e.target.style.backgroundColor='red';
+            e.target.textContent='bırak artık';
+        });
+        div.addEventListener('mouseup',function(e){
+            e.target.style.backgroundColor='cyan';
+            e.target.textContent='Teşekkürler';
+        });
+        var pos=0;
+        var pos2=0;
+        var pos3=0;
+        var pos4=0;
+        const box = document.querySelector('#box');
+        var t = setInterval(move,20);
+        var t2;
+        var t3;
+        var t4;
+        function move(){
+            if(pos>=150){
+                clearInterval(t);
+                t2 = setInterval(move2,20);
+            }else{
+                pos+=1;
+                box.style.left=pos+'px';
+            }
+        }
+        function move2(){
+            if(pos2>=150){
+                clearInterval(t2);
+                t3 = setInterval(move3,20);
+            }else{
+                pos2+=1;
+                box.style.top=pos2+'px';
+            }
+        }
+        function move3(){
+            if(pos3<=150){
+                pos3+=1;
+                box.style.right='px'+pos3;
+                console.log('girdi');
+            }else{
+              clearInterval(t3);
+              console.log('çıktı');
+            }
+        }
+        function move4(){
+            if(pos4>=150){
+                clearInterval(t4);
+            }else{
+                pos4+=1;
+                box.style.top=pos4+'px';
+            }
+        }
+    </script>
+</body>
+</html>

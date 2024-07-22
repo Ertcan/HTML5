@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="ide">
+    <h1> {{ title }} </h1>
+    <hr>
+    <input type="text" v-on:input= "changeTitle">
+    <p> {{ desc }} </p></div>
+
+    <div id="exersice">
+        <p>VueJS mükemmel bir framework {{ ad() }} </p>
+        <p>{{ carp() }}</p>
+        <p>0 ile 1 arasında rastgele sayı {{ rast() }}</p>
+        <img v-bind:src="att"  alt="" style="height: auto; width: 400px;">
+        <hr>
+        <button v-on:click="al" style="width: 100px; height: 30px;">Alert</button>
+        <button v-on:click="arttir" style="width: 100px; height: 30px;">Say</button>
+        <p>{{ sayi }}</p>
+        <p >Koordinatlar : </p>
+    </div>
+    <div id="exersice2">
+        <button v-on:click = "sAle">Alert</button>
+        <input type="text" v-on:keydown="updateValue">
+        <p>{‌{ value }}</p>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el : "#ide",
+        data : {
+            title : "Vue.js Giriş",
+            desc : "Merhaba Dünya"
+        },
+        methods : {
+          changeTitle : function(event){
+                this.desc = event.target.value;
+            }
+        } 
+
+        });
+        new Vue ({
+            el : "#exersice",
+            data : {
+                name : "Ertuğrul",
+                age : 22,
+                att : "../Fotoğraflar/cardwitcher.jpg",
+                sayi : 0,
+            },
+        methods : {
+            ad : function(){
+               return this.name +" "+ this.age;
+            },
+            carp : function(){
+                return this.age *5;
+            },
+            rast : function(){
+               return Math.random(1);
+            },
+            al : function(){
+                return alert("deneme");
+            },
+            arttir : function(){
+                this.sayi++;
+            }
+        }
+        });
+        new Vue ({
+            el : "#exersice2",
+            data :{
+                value: ''
+            },
+            methods :{
+                sAle : function(){
+                    alert("Deneme");
+                },
+                updateValue : function(event){
+				this.value = event.target.value;
+			}
+            }
+        });
+    </script>
+</body>
+</html>

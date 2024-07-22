@@ -1,0 +1,125 @@
+.navpos{
+
+    opacity: 0.8;
+}
+.body1 { 
+    background: url(../Fotoğraflar/ana\ sayfa1.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: gray;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 2rem;
+    box-shadow: 1px 1px 1px -1px gray;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .cards-text {
+    font-size: 1.2rem;
+  }
+  .cards:hover {
+    transform: scale(1.1);
+  }
+.slider-w{
+    width: 85%;
+}
+.sagayasla{
+position: absolute;
+top: 10px;
+right: 25px;
+}
+.list-unstyled li a{
+    text-decoration: none;
+}
+.new{
+    text-decoration: none;
+}
+.bg-image {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgb(10,8,10);
+    background-color: rgba(10,10,10, 0.8);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+  }
+  .foot{
+    background-color: rgb(0, 0, 0);
+  
+  }
+  .solcol{
+      color: azure;
+  }
+  .sagcol{
+      color: antiquewhite;
+  }
+.body2 {
+    background-image: url('../Fotoğraflar/backoyun.jpeg');
+    background-size: cover;
+    background-position: center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+p {
+    color: white;
+}
+.oyunh2{
+    color:white; font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+margin-top: 100px;
+}
+.jumbotron{
+    margin-top: 80px;
+}
+.mymodal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: rgb(10,8,10);
+    background-color: rgba(10,10,10, 0.8);
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: 370px;
+    margin-top: 0.125rem;
+}
+.dropdown-menu a:hover{
+    background-color: #dc3545;
+}
+.dropdown-menu a:active{
+    background-color: #030000;
+}
+.h-3{
+    height: auto;
+}

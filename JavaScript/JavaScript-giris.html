@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Giriş</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <style>
+        h1 {
+            color: chocolate;
+        }
+
+        body {
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-3">
+        <h1 class="app-title" id="header">To Do App</h1>
+        <div class="card">
+            <div class="card-header">
+                New Task
+            </div>
+            <div class="card-body">
+                <form id="addTaskForm">
+                    <div class="input-group mb-3">
+                        <input id="txtTaskName" name="taskName" type="text" class="form-control"
+                            placeholder="Type a new task" aria-describedby="btnAddNewTask">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit" id="btnAddNewTask">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                Task List
+                <a id="btnDeleteAll" href="#" class="btn btn-outline-danger btn-sm delete-all float-right">
+                    Delete All
+                </a>
+            </div>
+            <ul id="task-list" class="list-group">
+
+            </ul>
+
+            <!-- <ul id="task-list" class="list-group">
+				<li class="list-group-item list-group-item-secondary">To do item
+					<a href="#" class="delete-item float-right">
+						<i class="fas fa-times"></i>
+					</a>
+				</li>
+				<li class="list-group-item list-group-item-secondary">To do item
+					<a href="#" class="delete-item float-right">
+						<i class="fas fa-times"></i>
+					</a>
+				</li>
+				<li class="list-group-item list-group-item-secondary">To do item
+					<a href="#" class="delete-item float-right">
+						<i class="fas fa-times"></i>
+					</a>
+				</li>
+				<li class="list-group-item list-group-item-danger">To do item
+					<a href="#" class="delete-item float-right">
+						<i class="fas fa-times"></i>
+					</a>
+				</li>
+			
+			</ul> -->
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        //     var marka;
+        //     console.log(marka);
+        //     marka=prompt("Marka gir ! ");
+        //     console.log(marka);
+        //     var model="İ8";
+        //     var hiz=180;
+        //     console.log(marka+" "+model+" Max Hızı : "+hiz);
+        //     console.log("Sayfa yüklendi.");
+        //     let d = new Date();
+        //     console.log(d);
+        //     console.log(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear());
+        //     let old = new Date(1990,1,1);
+        //     let oldd = new Date(1,1,1);
+        //     let momD = new Date(2019,4,12);
+        //     oldd.setFullYear(1);
+        //     console.log(oldd);
+        //     console.log((old.getDate()-oldd.getDate())+"/"+(old.getMonth()-oldd.getMonth())+"/"+(old.getFullYear()-oldd.getFullYear()));
+        //     console.log(momD);
+        //     var num = 15.123456789;
+        //     num =Math.round(num);
+        //     num = Math.floor(num);
+        //     num = Math.ceil(num);
+        //     console.log(num);
+        //     num = Math.min(1,2,10,56,20);
+        //     console.log(num);
+        //     let val = prompt("Sayı gir");
+        //     num =Math.round(Math.random()*val);
+        //     console.log(num);
+        //     let soru = prompt("Who is There ?");
+        //     if(soru=='cancel'){
+        //         console.log("Canceled.");
+        //     }
+        //     else if(soru=='Admin'){
+        //         let pw = prompt("Password ? ");
+        //         if(pw=='cancel'){
+        //             console.log("Canceled.");
+        //         }else if(pw=='themaster'){
+        //             console.log("Welcome !!");
+        //         }else{
+        //             console.log("Wrong Password.");
+        //         }
+        //     }
+        //     else{
+        //     console.log("I don't Know You !");
+        //     }
+        //     let person = {
+        //         firstName :'Ertuğrul',
+        //         lastName : 'Candan',
+        //         date : 19,
+        //         hobbies : ['Music','Game']
+        //     }
+        //     console.log(person);
+        //     var aracBilgileri = {
+        //         id = 'bmw116d_123',
+        //         model : 'bmw 116d',
+        //         yil : 2015,
+        //         renk : 'white',
+        //         servisKayitlari : [
+        //             {
+        //                 id : 'bmw116d_123_1',
+        //                 tarih : '20.01.2016',
+        //                 km : 13000,
+        //                 ucret : '900 tl',
+        //                 detay : [
+        //                 {
+        //                     id: 'bmw116d_123_1_1',
+        //                     aciklama:'yag degisimi',
+        //                     ucret : '300 tl'
+        //                 },
+        //                 {
+        //                     id: 'bmw116d_123_1_2',
+        //                     aciklama:'filtre degisimi',
+        //                     ucret : '300 tl'
+        //                 },
+        //                 {
+        //                     id: 'bmw116d_123_1_3',
+        //                     aciklama:'fren degisimi',
+        //                     ucret : '300 tl'
+        //                 }
+        //                 ]
+        //             },
+        //             {
+        //                 id : 'bmw116d_123_2',
+        //                 tarih : '10.01.2017',
+        //                 km : 26000,
+        //                 ucret : '1900 tl',
+        //                 detay : [
+        //                 {
+        //                     id: 'bmw116d_123_2_1',
+        //                     aciklama:'yag degisimi',
+        //                     ucret : '300 tl'
+        //                 },
+        //                 {
+        //                     id: 'bmw116d_123_2_2',
+        //                     aciklama:'filtre degisimi',
+        //                     ucret : '300 tl'
+        //                 },
+        //                 {
+        //                     id: 'bmw116d_123_2_3',
+        //                     aciklama:'fren degisimi',
+        //                     ucret : '300 tl'
+        //                 }
+        //                 ]
+        //             },
+        //             {
+        //                 id : 'bmw116d_123_3',
+        //                 tarih : '15.01.2018',
+        //                 km : 56000,
+        //                 ucret : '1500 tl',
+        //                 detay : [
+        //                 {
+        //                     id: 'bmw116d_123_3_1',
+        //                     aciklama:'yag degisimi',
+        //                     ucret : '300 tl'
+        //                 },
+        //                 {
+        //                     id: 'bmw116d_123_3_2',
+        //                     aciklama:'filtre degisimi',
+        //                     ucret : '300 tl'
+        //                 },
+        //                 {
+        //                     id: 'bmw116d_123_3_3',
+        //                     aciklama:'fren degisimi',
+        //                     ucret : '300 tl'
+        //                 }
+        //                 ]
+        //             }
+        //         ]
+        //     }
+        //     let cars = ['Bmw','Mercedes','Toyota'];
+        //     let people = [
+        //         {firstname :'Ali',lastname : 'Merat'},
+        //         {firstname :'Mehmet',lastname : 'Lor'},
+        //         {firstname :'Bilge',lastname : 'Kaçar'}];
+        //     for(let i=0;i<cars.length;i++){
+        //         console.log(cars[i]);
+        //     }
+        //     for(let i in cars){
+        //         console.log(`index : ${i} value : ${cars[i]}`);
+        //     }
+        //      people.forEach(function(item){
+        //          console.log(item.firstname+' '+item.lastname);
+        //      });
+        //     for (let i in people){
+        //         console.log(`İndex : ${i} value : ${people[i].firstname} ${people[i].lastname}`);
+        //     }
+        //     let val = people.map(function(item){
+        //         return item.firstname+' '+item.lastname;
+        //     });
+        //     console.log(val);
+        //     let val=10;
+        //     val =Math.round((1+10*Math.random()));
+        //     let tahminS = prompt('kaç kerede tahmin edebilirsiniz ?');
+        //     let puan=100;
+        //     let EkPu = puan/tahminS;
+        //     for(let i=0;i<=tahminS;i++){
+        //         let tahmin = Number(prompt('Tahmininizi Yazın ! '));
+        //         if(tahmin<val){
+        //             console.log('Tahmininizi yükseltin.');
+        //             puan-=EkPu;
+        //         }else if(tahmin>val){
+        //             console.log('Tahmininizi düşürün.');
+        //             puan-=EkPu;
+        //         }else if(tahmin===val){
+        //             console.log(`Tebrikler doğru bildiniz ! Tahmini Bildiğiniz Sayı : ${i+1} Puanınız : ${puan}`);
+        //             break;
+        //         }
+        //         if(puan<=0){
+        //             console.log(`Malesef hakkınız bitti ! Tutulan Sayı : ${val}`);
+        //             break;
+        //         }
+        //     }
+        //     let sor =Number(prompt('Kaç yılında doğdunuz ?'));
+        //     let year = new Date();
+        //      let val = prompt('Kaç yılında doğdunuz ?')
+        //      val = yasHesap(val);
+        //      console.log(val);
+        //     function yasHesap(dogumYili){
+        //         let year = new Date();
+        //         let yas=0;
+        //         return yas = (year.getFullYear()-dogumYili);
+        //     }
+        //     let val = window;
+        //     console.log(val);
+        //     let cnf = confirm('Emin misiniz ?');
+        //     let val = window;
+        //     val = window.scrollY;
+        //     console.log(val);
+        //         console.log(val.location);
+        //     window.location.reload(10);
+        //     let renk = 'kırmızı';
+        //    if(true){
+        //     var araba ='mazda';
+        //     let renk = 'white';
+        //     const marka = 'rx-8';
+        //     console.log(araba,renk,marka);
+        //         }
+        //        console.log(araba);
+        //   console.log(renk);
+        //         console.log(marka);
+        // let val;
+        // val = document.getElementById('header');
+        // val.style.fontSize = '30px';
+        // val.style.display='inline';
+        // val.innerHTML='<em>Deneme<em>';
+        //     let val2 ;
+        //     val2 = document.querySelector('li:nth-child(2)');
+        //     val2.style.color = 'red';
+        // let val;
+        // val = document.getElementsByClassName('list-group-item');
+
+        // for(let i=0;i<val.length;i++){
+        //     val[i].style.color='blue';
+        // }
+        // val = document.getElementsByTagName('li');
+        // val[1].style.color='white';
+        // val= document.querySelectorAll('li');
+        // val[2].style.color='red';
+        // val.forEach(function(item){
+        // item.style.color='white';
+        // });
+        // let val;
+        // let list = document.querySelector('.list-group');
+        // val=list;
+        // val = list.childNodes;
+        // val = list.parentElement.parentElement.style.backgroundColor='black';
+        // console.log(val);
+        // const li = document.createElement('li');
+        // li.className='list-group-item list-group-item-warning';
+        // li.setAttribute('title','new İtem');
+        // const text = document.createTextNode('new item');
+        // li.appendChild(text);    
+        // const a = document.createElement('a');
+        // a.setAttribute('href','#');
+        // a.className='delete-item float-right';
+        // a.innerHTML='<i class ="fas fa-times"><i>';
+        // li.appendChild(a);
+        // const ul =document.getElementById('task-list');
+        // ul.appendChild(li);
+        // const tasklist= document.querySelector('#task-list');
+        // tasklist.lastElementChild.remove();
+        // tasklist.childNodes[0].remove();
+        // tasklist.childNodes[1].remove();
+        // const btn = document.querySelector('#btnDeleteAll');
+        // btn.addEventListener('click',function(){
+        //     console.log('Btn clicked');
+        // });
+        // function btnclick(){
+        //     console.log('Clicked');
+        // }
+        // btn.addEventListener('click',btnclick);
+        // btn.addEventListener('click',function(e){
+        //     console.log('btn clicked');
+        //     e.preventDefault();
+        //     console.log(e.target);
+        // });
+        // const btn = document.querySelector('#btnDeleteAll');
+        // const ul = document.querySelector('ul');
+        // btn.addEventListener('click',eventHandler);
+        // function eventHandler(event){
+        //     console.log(`event type : ${event.type}`);
+        // }
+        // btn.addEventListener('mouseup',eventHandler);
+        // btn.addEventListener('mousedown',eventHandler);
+        // btn.addEventListener('dblclick',eventHandler);
+        // ul.addEventListener('mouseenter',eventHandler);
+        // ul.addEventListener('mouseleave',eventHandler);
+        // ul.addEventListener('mouseover',eventHandler);
+        // ul.addEventListener('mouseout',eventHandler);
+        // ul.addEventListener('mousemove',eventHandler);
+        // const input = document.querySelector('#txtTaskName');
+        // input.addEventListener('keydown',eventHandler);
+        // function eventHandler(e){
+        //     console.log(`event type : ${e.type} key code : ${e.keyCode} value : ${e.target.value}`);
+        //    e.target.style.backgroundColor='black';
+        // }
+        // input.addEventListener('focus',eventHandler);
+        // input.addEventListener('keyup',eventHandler);
+        // input.addEventListener('blur',eventHandler2);
+        // function eventHandler2(e){
+        //     e.target.style.backgroundColor='white';
+        // }
+        // const form = document.querySelector('form');
+        // const cardBody = document.querySelector('.card-body');
+        // const card = document.querySelector('.card');
+        // const container = document.querySelector('.container');
+        // form.addEventListener('click',function(e){
+        //     console.log('form');
+        //     e.stopPropagation();
+        // });
+        // cardBody.addEventListener('click',function(e){
+        //     console.log('Card Body');
+        //     e.stopPropagation();
+        // });
+        // card.addEventListener('click',function(e){
+        //     console.log('Card');
+        //     e.stopPropagation();
+        // });
+        // container.addEventListener('click',function(e){
+        //     console.log('Container');
+        //     e.stopPropagation();
+        // });
+        // const deleteItems = document.querySelectorAll('.fa-times');
+        // deleteItems.forEach(function(item){
+        //     item.addEventListener('click',function(e){
+        //         console.log(e.target);
+        //     });
+        // });
+        // const ul = document.querySelector('ul');
+        // ul.addEventListener('click',function(e){
+        //     if(e.target.className==='fas fa-times'){
+        //        e.target.parentElement.parentElement.remove();
+        //         e.preventDefault();
+        //     }
+        // });
+        // let firstName = localStorage.setItem('firstName','Ertuğrul');
+        // let lastName = localStorage.setItem('lastName','CANDAN');
+        // let  hobies = ['sinema','oyun','kodlama'];
+        // console.log(localStorage);
+        // let city = sessionStorage.setItem('city','Afyonkarahisar');
+        // let country = sessionStorage.setItem('country','Türkiye');
+        // localStorage.setItem('hobies',JSON.stringify(hobies));
+        // console.log(sessionStorage);
+        const form = document.querySelector('form');
+        const input = document.querySelector('#txtTaskName');
+        const btn = document.querySelector('#btnDeleteAll');
+        const taskList = document.querySelector('#task-list');
+        addEventListener();
+        function addEventListener() {
+            form.addEventListener('submit', addNewItem);
+            taskList.addEventListener('click', deleteItem);
+            btn.addEventListener('click', deleteAll);
+        }
+        function addNewItem(e) {
+            if (input.value === '') {
+                alert('Boş geçtiniz!');
+            } else {
+                const li = document.createElement('li');
+                li.className = 'list-group-item list-group-item-secondary';
+                li.textContent= input.value;
+                const a = document.createElement('a');
+                a.classList = 'delete-item float-right';
+                a.setAttribute('href', '#');
+                a.innerHTML = '<i class="fas fa-times"></i>';
+                li.appendChild(a);
+                taskList.appendChild(li);
+            }
+            e.preventDefault();
+
+        }
+        function deleteItem(e) {
+            if (e.target.className === 'fas fa-times') {
+                e.target.parentElement.parentElement.remove();
+            }
+        }
+        function deleteAll(e) {
+            if(confirm('Emin Misiniz ?')){
+            taskList.innerHTML = '';
+            } 
+            e.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

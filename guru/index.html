@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Kahve Yeşilyol Menü</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Playfair Display', serif;
+}
+body{ background:url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80);
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+}
+#header{
+  margin:20px;
+}
+#header>h1{
+  text-align:center;
+  font-size:3rem;
+}
+#header>p{
+  text-align:center;
+  font-size:1.5rem;
+  font-style:italic;
+}
+.container{
+  width:100vw;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:40px 20px;
+}
+.card{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+  margin-bottom:60px;
+}
+.card>div{
+  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+}
+.card-image{
+  width:400px;
+  height:250px;
+}
+.card-image>img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:bottom;
+}
+.card-text{
+  margin:-30px auto;
+  margin-bottom:-50px;
+  height:550px;
+  width:300px;
+  background-color:#1D1C20;
+  color:#fff;
+  padding:20px;
+}
+.card-meal-type{
+  font-style:italic;
+}
+.card-title{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  margin-top:5px;
+}
+.card-body{
+  font-size:1.25rem;
+}
+.card-price{
+  width:100px;
+  height:100px;
+  background-color:#970C0A;
+  color:#fff;
+  margin-left:auto;
+  font-size:2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+a{
+  text-decoration: none;
+  color: #ebebeb;
+  display: block;
+}
+ul{
+	display: contents;
+	width: 100%;
+	height: 80vh;
+	margin: auto;
+	max-width: 1000px;
+	justify-content: space-between;
+	text-align: center;
+}
+li {
+	padding: 1rem 2rem 1.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebebeb;
+	min-width: 80px;
+	margin: auto;
+}
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s;
+  z-index: 1000;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+li:hover {
+  background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 #970C0A;
+	font-weight: bold;
+}
+li:active {
+  transform: translateY(4px);
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+.shameless-plug{
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  padding: 8px 20px;
+  color: #ccc;
+  text-decoration: none;
+}
+    </style>
+</head>
+<body>
+  <a href="#button" id="button"></a>
+    <div id="header">
+      <img src="guru_menu.png"  class="img-fluid">
+          </div>
+          <div class="bg-dark">
+        <ul>
+            <li><a href="#kahvalti">Kahvaltı</a></li>
+            <li><a href="#sahanda">Sahanda</a></li>
+            <li><a href="#omletler">Omletler</a></li>
+            <li><a href="#gozlemeler">Gözlemeler</a></li>
+            <li><a href="#tostlar">Tostlar</a></li>
+            <li><a href="#aparatif">Aparatifler</a></li>
+            <li><a href="#burger">Burgerler</a></li>
+            <li><a href="#makarna">Makarnalar</a></li>
+            <li><a href="#salata">Salatalar</a></li>
+            <li><a href="#wrap">Wraplar</a></li>
+            <li><a href="#tavuk">Tavuk Yemekleri</a></li>
+            <li><a href="#kofte">Köfteler</a></li>
+            <li><a href="#tatli">Tatlılar</a></li>
+            <li><a href="#sogukkahve">Soğuk Kahveler</a></li>
+            <li><a href="#dunyakahve">Dünya Kahveleri</a></li>
+            <li><a href="#uc">3.Nesil Kahveler</a></li>
+            <li><a href="#frap">Frappeler</a></li>
+            <li><a href="#sut">MilkShakeler</a></li>
+            <li><a href="#kokteyl">Kokteyler</a></li>
+            <li><a href="#frozen">Frozenler</a></li>
+            <li><a href="#smot">Smoothieler</a></li>
+            <li><a href="#sicak">Sıcak İçecekler</a></li>
+            <li><a href="#soguk">Soğuk İçecekler</a></li>
+        </ul></div>
+        <div class="container">
+        <div class="card" id="kahvalti">
+          <div class="card-image">
+            <img src="guru_menu1.jpg">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Kahvaltı</p>
+            <h2 class="card-title">Guru Plus Kahvaltı</h2>
+            <p class="card-body ">Karışık Kızartma, Patates Tava, Kaşarlı Gözleme, Göz Yumurta, Domatesli Sucuk, Zeytin,Peynir Tabağı ,Yeşillik Tabağı, Salçalı Sosis, Tereyağı, Bal Kaymak, Çikolata, Çilek, Muz, Söğüş Tabağı, Termos Çay (3. Kişi için ekstra ücret 3o tl'dir.) Kahvaltı saatleri 09.00-14.00 arasındadır.</p>
+          </div>
+          <div class="card-price">350 TL</div>
+        </div>
+          <div class="card">
+          <div class="card-image">
+            <img src="guru_menu2.jpg">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Kahvaltı</p>
+            <h2 class="card-title">Express Kahvaltı</h2>
+            <p class="card-body">Kahvaltılık Çikolata , Bal Kaymak , Siyah Zeytin , Domates Salatalık , Dilim Kaşar , Dilim Salam ,Dilim Peynir , Kızarmış Patates , Tava Yumurta ve Yıldız Sosis ile yanında ikram bir bardak çay...</p>
+          </div>
+          <div class="card-price">135 TL</div>
+        </div>
+          <div class="card">
+          <div class="card-image">
+            <img src="Sicak_kahvalti.jpg">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Kahvaltı</p>
+            <h2 class="card-title">Sıcak Kahvaltı</h2>
+            <p class="card-body">Yıldız Sosis , Kızarmış Peynir , Izgara Sucuk , Patates Tava , Soğan Halkası , Domates , Izgara Salam Dilimi ve Tava Yumurta ile yanında ikram bir bardak çay...</p>
+          </div>
+          <div class="card-price">145 TL</div>
+        </div>
+          <div class="card" id="sahanda">
+          <div class="card-image">
+            <img src="sahanda_menemen.jpg">
+          </div>
+          <div class="card-text">
+            <p class="card-meal-type">Sahanda</p>
+            <h2 class="card-title">Sahanda Menemen</h2>
+            <p class="card-body"> Yumurta, Biber, Domates</p>
+          </div>
+          <div class="card-price">65 TL</div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+              <img src="sahanda_menemen.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sahanda</p>
+              <h2 class="card-title">Kıymalı Menemen</h2>
+              <p class="card-body">Yumurta, Biber, Domates,Kıyma</p>
+            </div>
+            <div class="card-price">80 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="kasarli-menemen.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sahanda</p>
+              <h2 class="card-title">Kaşarlı Menemen</h2>
+              <p class="card-body">Yumurta, Biber, Domates,Kaşar</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sucuklu-menemen.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sahanda</p>
+              <h2 class="card-title">Sucuklu Menemen</h2>
+              <p class="card-body">Yumurta, Biber, Domates,Sucuk</p>
+            </div>
+            <div class="card-price">80 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="kıymalı_yumurta.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sahanda</p>
+              <h2 class="card-title">Kıymalı Yumurta</h2>
+              <p class="card-body">Kıyma, Yumurta</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sucuklu_yumurta.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sahanda</p>
+              <h2 class="card-title">Sucuklu Yumurta</h2>
+              <p class="card-body">Sucuk ,Yumurta</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="tereyag_yumurta.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sahanda</p>
+              <h2 class="card-title">Tereyağlı Tava Yumurta</h2>
+              <p class="card-body">Tereyağı , Yumurta</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card" id="omletler">
+            <div class="card-image">
+              <img src="peynirli_Soft.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Omletler</p>
+              <h2 class="card-title">Peynirli Soft Omlet</h2>
+              <p class="card-body">Rende Kaşar ,Cheddar , Beyaz Peynir , İki Adet Çırpılmış Yumurta , Lor Peyniri yanında domates salatalık söğüş ve patates ile...</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="SebzeliFresh.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Omletler</p>
+              <h2 class="card-title">Sebzeli Fresh Omlet</h2>
+              <p class="card-body">Renkli Biberler, Mısır, Mantar, Domatesler, Dilim Zeytin, Maydanoz, İki Adet Çırpılmış Yumurta, Rende Kaşar Peyniri, yanında zeytinli domates salatalık söğüş ve patates ile...</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="mix_omlet.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Omletler</p>
+              <h2 class="card-title">Mix Omlet</h2>
+              <p class="card-body">Renkli Biberler, Mısır, Sosis, Sucuk, Mantar, Domatesler, Dilim Zeytin, Maydanoz, İki Adet Çırpılmış Yumurta, Rende Kaşar Peyniri, yanında zeytinli domates salatalık söğüş ve patates ile...</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sade_omlet.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Omletler</p>
+              <h2 class="card-title">Sade Omlet</h2>
+              <p class="card-body">İki Adet Çırpılmış Yumurta yanında zeytinli domates salatalık söğüş ve patates ile...</p>
+            </div>
+            <div class="card-price">50 TL</div>
+          </div>
+          <div class="card" id="gozlemeler">
+            <div class="card-image">
+              <img src="kasarli_gozleme.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Gözlemeler</p>
+              <h2 class="card-title">Kaşarlı Gözleme</h2>
+              <p class="card-body">Taze Yufka Arasına Rende Kaşar Peyniri Üzerinde Domates Salçası ve kekik yanında zeytinli domates salatalık söğüş ve patates ile...</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="alaturka_gozleme.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Gözlemeler</p>
+              <h2 class="card-title">Alaturka (Sucuklu) Gözleme</h2>
+              <p class="card-body">Taze Yufka Arasına Sucuk, Renkli Biberler Ve Rende Kaşar Peyniri Yanında Zeytinli Domates Salatalık Söğüş Ve Patates ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="kiymali_yogurlu.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Gözlemeler</p>
+              <h2 class="card-title">Kıymalı Yoğurtlu Gözleme</h2>
+              <p class="card-body">Taze Yufka Arasına Kavrulmuş Kıyma Ve Köz Patlıcan ,Üzerine Süzme Yoğurt, Salçalı Tereyağ Sosu Yanında Patates Domates Salatalık Söğüş ile...</p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="patatesi_gozleme.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Gözlemeler</p>
+              <h2 class="card-title">Patatesli Gözleme</h2>
+              <p class="card-body">Taze Yufka Arasına Maydanoz,Baharatlı Patates Yanında Zeytinli Domates Salatalık Söğüş ile...</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card" id="tostlar">
+            <div class="card-image">
+              <img src="extra_cheese.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tostlar</p>
+              <h2 class="card-title">Extra Cheese Tost</h2>
+              <p class="card-body">Tost Ekmeği Arasına Pesto Sos ,Rende Kaşar Peyniri, Cheddar, Beyaz Peynir Yanında Zeytinli Domates Salatalık Patates ile...</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="kiymali_kasarli.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tostlar</p>
+              <h2 class="card-title">Kıymalı Kaşarlı Tost</h2>
+              <p class="card-body">Bazlama Ekmeği Arasına Sote Kıyma Köz Patlıcan, Jelepon Biber, Rende Kaşar Peyniri Zeytinli Domates Salatalık Söğüş Ve Patates ile...</p>
+            </div>
+            <div class="card-price">95 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="Sicak_kahvalti.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tostlar</p>
+              <h2 class="card-title">Beyaz Peynirli Domates Tost</h2>
+              <p class="card-body">Tost Ekmeği Arasına Domates, Kekik ve Beyaz Peynir Zeytinli Domates Salatalık Söğüş Ve Patates ile... </p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="Sicak_kahvalti.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tostlar</p>
+              <h2 class="card-title">Karışık Tost</h2>
+              <p class="card-body">Tost Ekmeği Arasına Kaşar ve Sucuk Yanında Dip Sos ve Patates ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="lord.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tostlar</p>
+              <h2 class="card-title">Lord Of The Tost</h2>
+              <p class="card-body">Tost Ekmeği Arasına Salam, Sucuk, Rende Kaşar Peyniri, Cheddar, Salça Yanında Domates Salatalık Söğüş ve Patates ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="guru_special.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tostlar</p>
+              <h2 class="card-title">Guru Special Tost</h2>
+              <p class="card-body">Bazlama Ekmeği Arasına Sucuk, Salam, Jelapone biber, Domates, Mısır Ve Rende Kaşar Peyniri Yanında Domates Salatalık Söğüş ve Patates ile...</p>
+            </div>
+            <div class="card-price">95 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image" id="aparatif">
+              <img src="sosis_sepet.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Sosis Sepeti</h2>
+              <p class="card-body">Kızarmış Yıldız Sosisler ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">80 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="citir_tavuk.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Çıtır Tavuk Sepeti</h2>
+              <p class="card-body">Kızarmış Paneli Parmak Tavuklar ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="karisik.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Karışık Sıcak Sepeti</h2>
+              <p class="card-body">Yıldız Sosis, Sigara Böreği, Nugget, Kızarmış Mantar, Soğan Halkası, Çıtır Tavuk ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">110 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="nugget.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Nugget Sepeti</h2>
+              <p class="card-body">Kızarmış Tavuk Nuggetlar ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sigara.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Sigara Böreği</h2>
+              <p class="card-body">Maydanozlu ve Peyaz Peynirli Sigara Börekleri ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">75 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sogan_kroket.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Soğan Kroket</h2>
+              <p class="card-body">Kızarmış Soğan Halkası ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">80 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="Sicak_kahvalti.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Aperatifler</p>
+              <h2 class="card-title">Patates Sepeti</h2>
+              <p class="card-body">Kızarmış Baharatlı Bonfrit Patatesler...</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card" id="burger">
+            <div class="card-image">
+              <img src="bbq.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Burgerler</p>
+              <h2 class="card-title">BBQ Chicken Burger</h2>
+              <p class="card-body">Burger Ekmeği Arasına Barbekü Soslu Tavuk Pirzola, İceberg, Kornişon Turşu, Domates ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="vegas.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Burgerler</p>
+              <h2 class="card-title">Vegas Burger</h2>
+              <p class="card-body">Izgara Burger Köftesi, Jambon, Karamelize Soğan, Cheddar, Kornişon Turşu Yanında Patates Tava ile...</p>
+            </div>
+            <div class="card-price">145 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="double.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Burgerler</p>
+              <h2 class="card-title">Double Burger</h2>
+              <p class="card-body">İki Tane Burger Köftesi, Jambon, Karamelize Soğan, Turşu, Cheddar Yanında Patates Tava ile...</p>
+            </div>
+            <div class="card-price">175 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="guru_fantastic.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Burgerler</p>
+              <h2 class="card-title">Guru Fantastic Burger</h2>
+              <p class="card-body">Izgara Burger Köftesi, Jambon, Kaşarlı Mantar, Kibrit Patates Yanında Patates Tava ile...</p>
+            </div>
+            <div class="card-price">145 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sogan_burger.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Burgerler</p>
+              <h2 class="card-title">Soğan Kroket Burger</h2>
+              <p class="card-body">Panelenmiş Çıtır Tavuk Pirzola, Cheddar, Çıtır Soğan Dilimleri Yanında Patates Tava ile...</p>
+            </div>
+            <div class="card-price">120 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image" id="makarna">
+              <img src="manti.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Makarnalar</p>
+              <h2 class="card-title">Guru Ev Mantısı</h2>
+              <p class="card-body">Tereyağlı Özel Sos ve Yoğurt ile...</p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="pennearab.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Makarnalar</p>
+              <h2 class="card-title">Penne Arabiata</h2>
+              <p class="card-body">Mısır, Zeytin ve Acılı Arabiatta ile...</p>
+            </div>
+            <div class="card-price">100 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="pennecory.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Makarnalar</p>
+              <h2 class="card-title">Penne Corry</h2>
+              <p class="card-body">Jülyen Sotelenmiş Tavuk Bonfile , Mantar , Köri Baharatı ve Kremalı Özel Sos ile...</p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="pesto.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Makarnalar</p>
+              <h2 class="card-title">Tagliatelli Pesto</h2>
+              <p class="card-body">Tagliatelli Makarnası ,Fesleğen ,Dilim Zeytinler, Mısır, Domatesler ve Kremalı Özel Sos ile...</p>
+            </div>
+            <div class="card-price">100 TL</div>
+          </div>
+    
+          <div class="card">
+            <div class="card-image">
+              <img src="alfredo.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Makarnalar</p>
+              <h2 class="card-title">Tagliatelli Alfredo</h2>
+              <p class="card-body">Fesleğenli Özel Sosumuz , Mantar ve Izgara Tavuk Bonfile ile...</p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="basilico.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Makarnalar</p>
+              <h2 class="card-title">Tagliatelli Basilico</h2>
+              <p class="card-body">Domatesli, Fesleğenli Zeytinli Basilico Sos ile...</p>
+            </div>
+            <div class="card-price">100 TL</div>
+          </div>
+          <div class="card" id="salata">
+            <div class="card-image">
+              <img src="çitirsalat.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Salatalar</p>
+              <h2 class="card-title">Çıtır Tavuk Salata</h2>
+              <p class="card-body">Mascolin Yeşilliği, Domates, Mısır, Renkli Biberler, Salatalık ve Paneli Çıtır Tavuklar...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="sezarsalat.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Salatalar</p>
+              <h2 class="card-title">Tavuklu Sezar Salata</h2>
+              <p class="card-body">Sezar Soslu İceberg Marul, Krafon Ekmek, Mısır, Domates ve Izgara Tavuk Bonfile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="tuna.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Salatalar</p>
+              <h2 class="card-title">Tuna Salata</h2>
+              <p class="card-body">Mascolin Yeşilliği, Domates, Mısır, Salatalık, Kırmızı Soğan, Dilim Zeytin ve Tonbalığı...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card" id="wrap">
+            <div class="card-image">
+              <img src="c_wrap.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Wrapler</p>
+              <h2 class="card-title">Chicken Wrap</h2>
+              <p class="card-body">Tortilla Ekmeği Arasında Jülyen Tavuklar, Renkli Biberler, Mantar, Rende Kaşar, Özel Sosu Yanında Mascolin Ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">110 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="t_wrap.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Wrapler</p>
+              <h2 class="card-title">Thunder's Wrap</h2>
+              <p class="card-body">Tortilla Ekmeği Arasınada Çıtır Tavuk Fileto, İceberg Marul, Kornişon Turşu, Domates, Mayonez ve Rende Kaşar Peyniri Yanında Mascolin ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">110 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="k_wrap.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Wraplar</p>
+              <h2 class="card-title">Köfte Wrap</h2>
+              <p class="card-body">Hafif Karamelize Soğan , Domates ,Izgara Köfteler ve Rende Kaşar Peyniri, Yanında Mascolin ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="s_wrap.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Wrapler</p>
+              <h2 class="card-title">Sucuk Wrap</h2>
+              <p class="card-body">Dilim Dilim Doğranmış Afyon Sucuğu , Renkli Biberler ve İçinde Rende Kaşar Peyniri, Yanında Mascolin ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">110 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="guru_logo.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Wrapler</p>
+              <h2 class="card-title">Tavuklu Bazlama</h2>
+              <p class="card-body">Bazlama Ekmeği Arasına Tavuk Bonfile, Renkli Biberler, Mısır, Özel Domates Sos ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="c_que.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Wrapler</p>
+              <h2 class="card-title">Chicken Quasedilla</h2>
+              <p class="card-body">Sotelenmiş Tavuklar, Renkli Biberler, Mısır ve Mexico Fasülyesi, Acılı Domates Sos, Mascolin ve Patates Tava ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card" id="tavuk">
+            <div class="card-image">
+              <img src="t_corry.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Tavuk Corry</h2>
+              <p class="card-body">Jülyen Tavuk Bonfileler, Mantar, Renkli Biberler, Yanında Püre Patates ve Mascolin, Köri Sosu ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="t_coket.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Tavuk Çökertme</h2>
+              <p class="card-body">Jülyen Tavuk Soteler, Renkli Biberler, Mantar, Arpacık Soğan, Özel Çökertme Sosu Yoğurt ve Kibrit Patates ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="ch_tavuk.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Chili Tavuk</h2>
+              <p class="card-body">Jülyen Sotelenmiş Acılı Tavuk, Mısır ve Mexico Fasülyesi Yanında Kibrit Patates ve Yoğurt ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="t_m_s_t.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Tikka Masala Soslu Tavuk</h2>
+              <p class="card-body">Jülyen Sotelenmiş Tavuklar, Mantar, Mısır, Kremalı Masala Sos, Yanında Mascolin ve Püre ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="p_tavuk.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Pesto Soslu Tavuk</h2>
+              <p class="card-body">Jülyen Tavuk Soteler, Mantar, Mısır ve Fesleğen Sos, Yanında Mascolin ve Püre Patates ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="t_graten.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Tavuk Graten</h2>
+              <p class="card-body">Izgara Tavuk Pirzola, Graten Sos, Erimiş Kaşar Peyniri, Tereyağlı Fıstık, Yanında Sebze Garnitür, ve Püre Patates ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="g_shit.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Guru Shinitzel</h2>
+              <p class="card-body">Çıtır Paneli Tavuk Göğsü, Üzerinde Mantarlı Özel Sos, Buğday Risotto ve Mascolin ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="b_t_tava.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tavuk Yemekleri</p>
+              <h2 class="card-title">Beğendili Tavuk Tava</h2>
+              <p class="card-body">Tereyağında Sotelenmiş Baharatlı Tavuk Pirzola, Patlıcanlı Beğendi Sos, Izgara Domates Biber ve Mini Salata ile...</p>
+            </div>
+            <div class="card-price">125 TL</div>
+          </div>
+          <div class="card" id="kofte">
+            <div class="card-image">
+              <img src="g_c_kofte.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Köfteler</p>
+              <h2 class="card-title">Güveçte Cheddarlı Köfte</h2>
+              <p class="card-body">Izgara Köfteler, Domates Sos, Cheddar Sos Pilav Patates ve Izgara Domates Biber ile...</p>
+            </div>
+            <div class="card-price">175 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="y_kofte.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Köfteler</p>
+              <h2 class="card-title">Yoğurtlu Köfte</h2>
+              <p class="card-body">Yoğurt Yatağınada, Izgarada Pişirilmiş Kasap Köfteler ve Üzerinde Domates Sos, Yanında Pilav Patates ve Izgara Domates Salatalık ile...</p>
+            </div>
+            <div class="card-price">175 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="b_i_kofte.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Köfteler</p>
+              <h2 class="card-title">Beğendili Izgara Köfte</h2>
+              <p class="card-body">Beğendi Sos Yatağında Izgara Köfteler, Soğan Piyaz Patates ve Biber ile...</p>
+            </div>
+            <div class="card-price">175 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="k_k_kofte.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Köfteler</p>
+              <h2 class="card-title">Klasik Kasap Köfte</h2>
+              <p class="card-body">Tortilla Ekmeği Üzerine Dizili Izgara Köfteler, Pilav, Soğan ve Patates, Izgara Domates Biber ile...</p>
+            </div>
+            <div class="card-price">165 TL</div>
+          </div>
+          <div class="card" id="tatli">
+            <div class="card-image">
+              <img src="c_mag.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Çilekli Magnolya</h2>
+              <p class="card-body">Çilek ve Bisküvi Kırıntısı</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="c_mag.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Çilekli Çikolatalı Magnolya</h2>
+              <p class="card-body">Çilek ve Çikolata</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="m_c_mag.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Muzlu Çikolatalı Magnolya</h2>
+              <p class="card-body">Muz ve Çikolata</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="m_o_mag.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Muzlu Oreolu Magnolya</h2>
+              <p class="card-body">Muz ve Oreo Kırıntısı</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="s_k_mag.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Süt Karamelli Magnolya</h2>
+              <p class="card-body">Muz Ve Süt Karameli</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="p_mag.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Purple Magnolya</h2>
+              <p class="card-body">Meyveli Özek Kek Kırıntıları</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="guru_menu.png">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Mix Magnolya</h2>
+              <p class="card-body">Çilek, Muz, Bisküvi Kırıntısı, Oreo Kırıntısı, Çikolata</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="asuman.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Asuman</h2>
+              <p class="card-body">Çikolata, Çilek, Kremşanti</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="pakize.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Pakize</h2>
+              <p class="card-body">Beyaz Çikolata, Muz, Kremşanti</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="k_prof.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Klasik Profterol</h2>
+              <p class="card-body">Çikoalta, Profterol, Çilek</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="guru_menu.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Supangle</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="g_malaga.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Guru Malaga</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="k_K.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Karayip Katları</h2>
+              <p class="card-body">Brownie Kek Arasına Dondurma Üstüne Çikolata Sosu ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="b_k_k.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Bitter Karayip Katları</h2>
+              <p class="card-body">Brownie Kek Arasına Dondurma Üstüne Bitter Çikolata Sosu ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="k_K.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Purple Karayip Katları</h2>
+              <p class="card-body">Meyveli Kek Arasına Dondurma Üstüne Çikolata Sosu ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="d_prof.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Dondurmalı Profterol</h2>
+              <p class="card-body">Profterol Arasına Dondurma Üstüne Çikolata Sos ile...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="s_s_c.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">San Sebastian Cheese Cake</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="s_roll.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Sushi Roll</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="c_krep.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Çikolatalı Krep</h2>
+              <p class="card-body">Özel Krep Hamuru İçine Çilek, Muz, Çikolata Sosu İle...</p>
+            </div>
+            <div class="card-price">90 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="endorfin.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Endorfin</h2>
+              <p class="card-body">Çilek, Muz, Bisküvi Çeşitleri Ve Çikolata ile...</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="c_pango.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Çikolatalı Pango</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">75 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="k_c_waffle.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Klasik Çiçek Waffle</h2>
+              <p class="card-body">Klasik Waffle Hamuru Üzerine Muz Ve Çilek İle...</p>
+            </div>
+            <div class="card-price">110 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="yaz_ask.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Yaz Aşkı</h2>
+              <p class="card-body">Antep Fıstıklı Waffle Hamuru, Muz, Çilek ve Çikolata ile...</p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="b_waffle.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Tatlılar</p>
+              <h2 class="card-title">Belçika Waffle</h2>
+              <p class="card-body">Orman Meyveli Waffle Hamuru Üstüne Çilek, Muz Ve Çikolata Sosu ile...</p>
+            </div>
+            <div class="card-price">105 TL</div>
+          </div>
+          <div class="card" id="sogukkahve">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk Kahveler</p>
+              <h2 class="card-title">Ice Latte</h2>
+              <p class="card-body">Espresso Buz Ve Süt ile... 7 TL Farkla İstediğiniz Şurubu Ekletebilirsiniz...(Karamel, Fındık, Vanilya) </p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk Kahveler</p>
+              <h2 class="card-title">Ice Americano</h2>
+              <p class="card-body">Espresso, Su , Buz ile...</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk Kahveler</p>
+              <h2 class="card-title">Ice Mocha</h2>
+              <p class="card-body">Espresso, Süt, Buz ve Beyaz Çikolata Veya Sütlü Çikolata ile...</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk Kahveler</p>
+              <h2 class="card-title">Ice Chai Tea Latte</h2>
+              <p class="card-body">Süt, Chai Tea Latte Tozu, Buz ile...</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card" id="dunyakahve">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Sade Filtre Kahve</h2>
+              <p class="card-body">French Press ile Taze Filtre Kahve 5 TL Ekstra Ücret ile Süt Veya Aromalı.(Çilek, Karpuz, Karamel, Vanilya, Çikolata, Fındık, Yaban Mersini)</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Uykusuz</h2>
+              <p class="card-body">Çift Çekim Espresso ve Yanında Sade Filtre Kahve İle...</p>
+            </div>
+            <div class="card-price">80 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Espresso</h2>
+              <p class="card-body">Taze Çekilmiş Espresso Kahvesi...</p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Americano</h2>
+              <p class="card-body">Çift Çekim Espresso ve Su ile...</p>
+            </div>
+            <div class="card-price">50 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Latte Macchiato</h2>
+              <p class="card-body">Süt, Köpük, Espresso, Dilediğiniz Şurup(Karamel, Fındık, Vanilya)</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Cappuchino</h2>
+              <p class="card-body">Espresso Ve Bol Köpüklü Süt...</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Coffe Mocha</h2>
+              <p class="card-body">Espresso, Süt, Beyaz Çikolata Veya Sütlü Çikolata</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Coffe Latte</h2>
+              <p class="card-body">Espresso Ve Süt ile... 7 TL Farkla İstediğiniz Şurubu Ekletebilirsiniz...(Karamel, Fındık, Vanilya)</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Toffe Nut Latte</h2>
+              <p class="card-body">Espresso Ve Süt Ve Özel Şurubu İle...</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Flat White</h2>
+              <p class="card-body">Çift Çekim Espresso Ve Süt ile... 7 TL Farkla İstediğiniz Şurubu Ekletebilirsiniz...(Karamel, Fındık, Vanilya)</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Sıcak Çikolata</h2>
+              <p class="card-body">Sıcak Çikolata Tozu Veya Beyaz Çikolata Tozu, Süt Ve İsterseniz Aromalı Seçenek İle...(Çilek, Karamel, Fındık, Vanilya, Yaban Mersini,Muz)</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Sahlep</h2>
+              <p class="card-body">Sahlep Tozu Ve Süt</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Ballı Muzlu Süt</h2>
+              <p class="card-body">Bal, Muz, Süt</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Dünya Kahveleri</p>
+              <h2 class="card-title">Chai Tea Latte</h2>
+              <p class="card-body">Süt, Chai Tea Latte Tozu</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card" id="uc">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">3. Nesil Kahveler</p>
+              <h2 class="card-title">Hario V60</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">3. Nesil Kahveler</p>
+              <h2 class="card-title">Chemex</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card" id="frap">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frappeler</p>
+              <h2 class="card-title">Brownie Frappe</h2>
+              <p class="card-body">Brownie, Süt, Dondurma, Buz, Çikolata, Kahve Tozu</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frappeler</p>
+              <h2 class="card-title">Coco Frappe</h2>
+              <p class="card-body">Süt, Dondurma, Buz, Kahve Tozu</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frappeler</p>
+              <h2 class="card-title">Klasik Frappe</h2>
+              <p class="card-body">Süt, Dondurma, Buz, Kahve Tozu İstediğiniz Aroma İle...(Çikolata, Çilek, Muz, Karamel, Fındık)</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card" id="sut">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">MilkShakes</p>
+              <h2 class="card-title">Bal Badem</h2>
+              <p class="card-body">Bal, Dondurma, Badem, Süt, Buz</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">MilkShakes</p>
+              <h2 class="card-title">Green Peace</h2>
+              <p class="card-body">Antep Özü, Çikolata, Dondurma, Süt, Buz</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">MilkShakes</p>
+              <h2 class="card-title">Mickey Mouse</h2>
+              <p class="card-body">Turunç, Hindistan Cevizi, Dondurma, Süt, Buz</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">MilkShakes</p>
+              <h2 class="card-title">Klasik MilkShake</h2>
+              <p class="card-body">Dondurma, Süt, Buz Ve İstediğiniz Aroma İle...(Çikolata, Çilek, Muz, Karamel, Fındık, Şeftali)</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card" id="kokteyl">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Kokteyler</p>
+              <h2 class="card-title">Zombie</h2>
+              <p class="card-body">Redbull Ve Espresso</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Kokteyler</p>
+              <h2 class="card-title">Perfect Dreams</h2>
+              <p class="card-body">Yeşil Elma, Redbull</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Kokteyler</p>
+              <h2 class="card-title">Karadut Şelalesi</h2>
+              <p class="card-body">Karadut, Sprite, Böğürtlen</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Kokteyler</p>
+              <h2 class="card-title">Blue Magic</h2>
+              <p class="card-body">Nane, Turunç, Redbull</p>
+            </div>
+            <div class="card-price">85 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Kokteyler</p>
+              <h2 class="card-title">Mojito</h2>
+              <p class="card-body">Sprite, Nane, Şeker 7 TL Farkla Çilekli Mojito</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card" id="frozen">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frozenler</p>
+              <h2 class="card-title">Amazon</h2>
+              <p class="card-body">Karadut, Böğürtlen</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frozenler</p>
+              <h2 class="card-title">Tropical Frozen</h2>
+              <p class="card-body">Kivİ, Mango, Ananas</p>
+            </div>
+            <div class="card-price">65 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frozenler</p>
+              <h2 class="card-title">Mc Laren</h2>
+              <p class="card-body">Mango, Limon</p>
+            </div>
+            <div class="card-price">75 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Frozenler</p>
+              <h2 class="card-title">Aromalı Frozen</h2>
+              <p class="card-body">Kivi, Çilek, Mango, Limon, Karpuz, Kavun, Böğürtlen, Yeşil Elma, Karadut, Ananas</p>
+            </div>
+            <div class="card-price">60 TL</div>
+          </div>
+          <div class="card" id="smot">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Smoothieler</p>
+              <h2 class="card-title">Bluebery</h2>
+              <p class="card-body">Yaban Mersini, Hindistan Cevizi</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Smoothieler</p>
+              <h2 class="card-title">Pineapple</h2>
+              <p class="card-body">Ananas, Muz</p>
+            </div>
+            <div class="card-price">70 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Smoothieler</p>
+              <h2 class="card-title">Aromalı Smoothie</h2>
+              <p class="card-body">Kivi, Çilek, Muz, Şeftali, Kavun, Ananas, Mango, Hindistan Cevizi, Yeşil Elma</p>
+            </div>
+            <div class="card-price">70TL</div>
+          </div>
+          <div class="card" id="sicak">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Demleme Çay</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">15TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Kupa Çay</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">25 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">İngiliz Çayı</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">30 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Zencefilli Şifa Çayı</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Grip Aşısı</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Yaseminli Yeşil Çay</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Ayvalı Ihlamur</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Klasik Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Süvari Türk Kahvesi</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">50 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Sütlü Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Dibek Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Menengiç Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Dağ Çilekli Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Kavunlu Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Sıcak İçecekler</p>
+              <h2 class="card-title">Damla Sakızlı Türk Kahvesi</h2>
+              <p class="card-body">15 TL Farkla double...</p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card" id="soguk">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Limonata</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">45 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Portakal Suyu</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Naneli Limonata</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Çilekli Limonata</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Kaos</h2>
+              <p class="card-body">Turunç, Nar, Limonata</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Mint Relax</h2>
+              <p class="card-body">Nane, Karpuz, Limonata</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Melodi</h2>
+              <p class="card-body">Kavun, Ananas, Limonata</p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Su</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">15 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Meyve Parçacıklı Su</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">20 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Sade Soda</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">20 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Meyveli Soda</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">25 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Ice Tea</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Kola</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Kola Zero</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Meyve Suyu</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Fanta</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Sprite</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">40 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Churchill</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">35 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Ayran</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">20 TL</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="icecek.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Soğuk İçecekler</p>
+              <h2 class="card-title">Red Bull</h2>
+              <p class="card-body"></p>
+            </div>
+            <div class="card-price">55 TL</div>
+          </div>
+
+        </div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+    var btn = $('#button');
+
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    });
+
+    btn.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop: 0}, 300);
+    });
+  });
+</script>
+</body>
+</html>

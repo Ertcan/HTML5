@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        img{
+            width: 150px;
+            height: 200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onchange="show()">tık</button>
+<img src="../Fotoğraflar/1632508859_Трисс 25 Косплей.jpg" alt="foto" onchange="show();">
+    <p id="demo2">HTML içeriğini değiştir</p>
+    <button type="button" onclick="document.getElementById('demo1').innerHTML ='Merhaba dünya'">tıkla 1</button>
+    <button type="button" onclick="document.getElementById('demo2').innerHTML = 'Değişti bile'">Tıkla2</button>
+    <p id="demo1"></p>
+    <hr>
+    <input type="text" id="name" onchange="change()">
+    <script>
+function show(){
+    alert("Merhaba");
+}
+function change(){
+    var x = document.getElementById("name");
+    x.value=x.value.toUpperCase();
+}
+let val = document.getElementById("name");
+let age;
+console.log(age);
+age=20;
+console.log(age);
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: #232427;
+}
+
+body .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px 0;
+}
+
+body .container .card {
+  position: relative;
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+  transition: 0.5s;
+}
+
+body .container .card:nth-child(1) .box .content a {
+  background: #2196f3;
+}
+
+body .container .card:nth-child(2) .box .content a {
+  background: #e91e63;
+}
+
+body .container .card:nth-child(3) .box .content a {
+  background: #23c186;
+}
+body .container .card:nth-child(4) .box .content a {
+  background: #02b8dd;
+}
+body .container .card:nth-child(5) .box .content a {
+  background: crimson;
+}
+body .container .card:nth-child(6) .box .content a {
+  background: #0d5e40;
+}
+body .container .card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #2a2b2f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+body .container .card .box:hover {
+  transform: translateY(-50px);
+}
+
+body .container .card .box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body .container .card .box .content {
+  padding: 20px;
+  text-align: center;
+}
+
+body .container .card .box .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+body .container .card .box .content h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+body .container .card .box .content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+body .container .card .box .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+body .container .card .box .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background: #fff;
+  color: #000;
+}
+    </style>
+</head>
+<body>
+    <header>
+		<div class="wrapper">
+			<h1>Gamer <span class="color">.</span></h1>
+			<nav><ul>
+				<li><a href="index.html">Anasayfa</a></li>
+				<li><a href="oyunlar.html">Oyunlar</a></li>
+				<li><a href="ilet.html">İletişim</a></li>
+				<li><a href="#">Oyun Habeleri</a></li>
+			</ul></nav>
+		</div>
+	</header>
+    <div class="container">
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>01</h2>
+              <h3>Witcher 3 Wild Hunt</h3>
+              <p>CD Projekt RED’in en sevilen oyunu olan Witcher 3, oyunculara nefes kesici bir açık dünya, muazzam bir hikaye ve ana hikayeden daha çok...</p>
+              <a href="witcher-icerik.html">Daha Fazlası</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>02</h2>
+              <h3>God of War: Ragnarök</h3>
+              <p>od of War: Ragnarök, Santa Monica Studio tarafından geliştirilen bir aksiyon macera oyunudur. Sony Interactive Entertainment (SIE) tarafından...</p>
+              <a href="#">Daha Fazlası</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <div class="content">
+              <h2>03</h2>
+              <h3>Elden Ring</h3>
+              <p>Elden Ring, 25 Şubat 2022'de gece yarısı tüm zaman dilimlerinde piyasaya sürülecek olduğunu biliyorduk. Nihayet Bandai Namco...</p>
+              <a href="#">Daha Fazlası</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+            <div class="box">
+              <div class="content">
+                <h2>04</h2>
+                <h3>Stray</h3>
+                <p>Bugün itibariyle sokak kedisini kontrol ettiğimi Stray oyunu platformlarda çıkışını yaptı. Uzun süredir oyuncuların merakla beklediği...</p>
+                <a href="#">Daha Fazlası</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <div class="content">
+                <h2>05</h2>
+                <h3>NFS UNBOUND</h3>
+                <p>Criterion Games'in geliştirip Electronic Arts'ın yayıncılığını yaptığı yarış oyunu serisi Need For Speed'in son oyunu Unbound...</p>
+                <a href="#">Daha Fazlası</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="box">
+              <div class="content">
+                <h2>06</h2>
+                <h3>Resident Evil</h3>
+                <p>Capcom, yıllık mali verilerini açıkladı. Şirket, bu seneki verilere göre rekor seviyede olmakla birlikte dört sene arka...</p>
+                <a href="#">Daha Fazlası</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <footer>
+		<div class="wrapper">
+			<div id="footer-info">
+				<p>Copyright 2022. Tüm Hakları Saklıdır.</p>
+				<p><a href="#">Hizmet Koşulları</a><a href="#">Gizlilik</a></p>
+			</div>
+			<div id="footer-links">
+				<ul>
+					<li><h5>Şirket</h5></li>
+					<li><a href="#">Hakkımızda</a></li>
+					<li><a href="#">Biz Kimiz</a></li>
+					<li><a href="#">Hizmetler/Ürünler</a></li>
+					<li><a href="#">Kariyer Fırsatları</a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</footer>
+</body>
+</html>

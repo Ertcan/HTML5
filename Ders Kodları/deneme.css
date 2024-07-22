@@ -1,0 +1,6 @@
+h1{font-family: 'Times New Roman', Times, serif; text-align: center; color: white; padding-bottom: 40px; background-color: black; display: block;}
+ul{ display:block; padding: 40px 40px 40px 40px;width: 100%; background-color: black;}
+li{ display: inline; float: left; position: relative;}
+li a{text-decoration: none; color: crimson; float: left; margin-left: 20px; }
+a:hover{color: blue; background-color: white; position: absolute 20px; }
+a::after{clear: both;}

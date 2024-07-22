@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .jqq{
+            color: darkblue;
+            font-size: larger;
+            margin: 0px;
+        }
+        .animate{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            position: absolute;
+            top: 1000px;
+           
+        }
+        .div{
+            background-color: gray;
+            color: white;
+            padding-bottom: 30px;
+            padding-top: 10px;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+        .secret{
+            display: none;
+            background-color: grey;
+            color: whitesmoke;
+            padding-bottom: 50px;
+            padding-top: 20px;
+        }
+        #cls{
+            float: right;
+            margin-right: 15px;
+            
+        }
+        #cls:hover{
+            color: darkred;
+        }
+        .backtotop{
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>jquery</h3>
+    <ul id="liste">
+        <li>asd</li>
+        <li>asdf</li>
+        <li>asdfg</li>
+    </ul>
+    <form action="">
+        <input type="text" placeholder="dedasd">
+    </form>
+    <p id="123">Deneme 0</p>
+    <p id="321">Deneme 1</p>
+    <p class="paragraf">Deneme 2</p>
+    <p class="paragraf">Deneme 3</p>
+    <p class="paragraf">Deneme 4</p>
+    <div class="animate"> </div>
+    <div class="div">Daha fazlası için tıklayın <span id="cls">X</span> <hr>
+        <div class="secret">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora iste quibusdam odio delectus consequatur exercitationem, aut alias suscipit similique tempore incidunt dolorum in officia a repudiandae aliquid rerum sed non.</div>
+    </div>
+    <button class="backtotop">başa dön</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+       console.log($("#liste"));
+       console.log($("h3"));
+       $('ul').css('backgroundColor','green');
+       var styles = {
+           color : 'green',
+           backgroundColor : 'yellow',
+           fontSize : '100px',
+           margin : '0px'
+       };
+       $('h3').css(styles);
+       $('h3').text('Jqueryy');
+       $('h3').val('123456');
+       $('h3').attr('href','#');
+       $('h3').css('margin','0px');
+       $(function(){
+        $('h3').click(function(){
+            console.log('H3 Tıklandı.')
+        });
+       });
+       $('p').click(function(){
+        $(this).addClass('jqq');
+        $('h3').fadeOut(2000);
+        $('h3').fadeIn(2000);
+       $('ul').slideUp(500);
+       $('ul').slideDown(1000);
+       $('input').hide(1200,function(){
+        $('#123').css(styles);
+       });
+
+       });
+       $('.animate').click(function(){
+        $('.animate').animate({
+            left : '400px',
+            width : '400px',
+            height : '400px'
+        },function(){
+            $('.animate').animate({
+                left : '400px',
+                width : '200px',
+                height : '200px'
+            });
+        });
+       });
+       $('.div').click(function(){
+        
+        $('.secret').slideToggle();
+       });
+       $('#cls').click(function(){
+        $('.div').hide('fast');
+       });
+       $(window).scroll(function(){
+        if($(window).scrollTop()>80){
+            $('.backtotop').fadeIn();
+        }else{
+            $('.backtotop').fadeOut();
+        }
+       });
+       $('.backtotop').click(function(){
+        $('html,body').animate({scrollTop:0},700);
+        return false;
+       });
+    </script>
+</body>
+</html>

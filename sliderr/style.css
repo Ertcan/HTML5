@@ -1,0 +1,118 @@
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+} */
+.sar {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+.sar i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.sar i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.sar i:first-child{
+  left: -22px;
+}
+.sar i:last-child{
+  right: -22px;
+}
+.sar .slide{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.slide::-webkit-scrollbar {
+  display: none;
+}
+.slide.no-transition {
+  scroll-behavior: auto;
+}
+.slide.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.slide.dragging .kart {
+  cursor: grab;
+  user-select: none;
+}
+.slide :where(.kart, .imgg) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide .kart {
+  scroll-snap-align: start;
+  height: 400px;
+  list-style: none;
+  
+
+  
+  flex-direction: column;
+ 
+}
+.slide .kart .imgg {
+
+  height: 200%; 
+  width: 200%; 
+
+}
+.kart .imgg img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+  padding-right: 100px;
+}
+.slide .kart h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.slide .kart span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .sar .slide {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sar .slide {
+    grid-auto-columns: 100%;
+  }
+}

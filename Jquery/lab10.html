@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arti , .eksi , .sonuc{
+            background-color: darkturquoise;
+            color: white;
+            font-size: xx-large;
+            text-align: center;
+            
+            width: 200px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            margin-left: 10px;
+        }
+        form{
+            margin-top: 10px;
+        }
+        .arti , .eksi{
+            cursor: pointer;
+        }
+        .cikis{
+            float: right;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .cikis:hover{
+            color: red;
+        }
+        .list{
+            display: block;
+            text-decoration: none;
+            background-color: aquamarine;
+            padding: 20px;
+        }
+        #ana{
+          padding-inline-start: 0px;
+        }
+    </style>
+</head>
+<body>
+    <button class="arti">+</button>
+    <button class="eksi">-</button>
+    <button class="sonuc">0</button>
+    <form action="">
+        <input class="abc" type="text" placeholder="Madde Girin...">
+        <button class="avc" type="submit">Ekle</button>
+        <ul id="ana">
+          
+        </ul>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+      const arti =  $('.arti');
+      const ul = document.querySelector('#ana');
+      const eksi = $('.eksi');
+      const sonuc = $('.sonuc');
+      var sayi = 0;
+      const deger = $('.abc');
+      const gonder = $('.avc');
+      const form = $('form');
+      var x = 0;
+      sonuc.text(sayi);
+      arti.click(function(){
+          sayi++;
+        sonuc.text(sayi);
+        renk();
+      });
+      eksi.click(function(){
+        sayi--;
+        sonuc.text(sayi);
+        renk();
+      });
+      function renk(){
+        if(sayi>0){
+          sonuc.css({
+            backgroundColor: 'yellow',
+            color : 'black'
+          });
+      }
+      if(sayi==0){
+          sonuc.css({
+            backgroundColor : 'darkturquoise',
+            color : 'white'
+          });
+      }
+      if(sayi<0){
+          sonuc.css({
+            backgroundColor: 'red',
+            color : 'white'
+          });
+      }
+      }
+
+     gonder.click(function(e){
+      const li = document.createElement('li');
+      const span = document.createElement('span');
+      li.appendChild(span);
+      li.className = 'list';
+      span.className = 'cikis';
+      span.textContent = 'X';
+      ++x;
+        li.appendChild(document.createTextNode(x+" "+deger.val()));
+        ul.appendChild(li);
+        e.preventDefault();
+     });
+     function deleteItem(e){
+        if(e.target.className==='cikis'){
+            e.target.parentElement.remove();
+        }
+     }
+     ul.addEventListener('click',deleteItem);
+
+    </script>
+</body>
+</html>
